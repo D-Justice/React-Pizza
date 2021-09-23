@@ -6,10 +6,10 @@ const PizzaForm = (props) => {
   return (
     <div className="form-row">
       <div className="col-5">
-        <input onChange={(e) => {props.pizzaPost('topping',e.target.value)}}type="text" className="form-control" placeholder="Pizza Topping" value={props.pizzaData.topping} />
+        <input onChange={(e) => {props.pizzaConcat('topping',e.target.value)}}type="text" className="form-control" placeholder="Pizza Topping" value={props.addPizzaData.topping} />
       </div>
       <div className="col">
-        <select onChange={(e) => {props.pizzaPost('size',e.target.value)}} value={props.pizzaData.size} className="form-control">
+        <select onChange={(e) => {props.pizzaConcat('size',e.target.value)}} value={props.addPizzaData.size} className="form-control">
           
           <option value="Small">Small</option>
           <option value="Medium">Medium</option>
@@ -18,13 +18,13 @@ const PizzaForm = (props) => {
       </div>
       <div className="col">
         <div className="form-check">
-          <input name='pizza' onChange={(e) => {props.pizzaPost('vegetarian',e.target.value)}} className="form-check-input" type="radio" value="Vegetarian" checked={null} />
+          <input name='pizza' onChange={(e) => {props.pizzaConcat('vegetarian', true)}} className="form-check-input" type="radio" value="Vegetarian"  />
           <label className="form-check-label">
             Vegetarian
           </label>
         </div>
         <div className="form-check">
-          <input name='pizza' onChange={(e) => {props.pizzaPost('vegetarian',e.target.value)}} className="form-check-input" type="radio" value="Not Vegetarian" checked={null} />
+          <input name='pizza' onChange={(e) => {props.pizzaConcat('vegetarian', false)}} className="form-check-input" type="radio" value="Not Vegetarian" />
           <label className="form-check-label">
             Not Vegetarian
           </label>

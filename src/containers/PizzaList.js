@@ -19,7 +19,7 @@ class PizzaList extends Component {
         <tbody>
           {
             this.props.data.map((each, index) => {
-              return <Pizza pizza={this.props.pizza} data={each}/>
+              return <Pizza key={index} pizza={this.props.pizza} data={each}/>
               
             })
           }
